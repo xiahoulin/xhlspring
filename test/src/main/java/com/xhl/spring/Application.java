@@ -1,3 +1,4 @@
+package com.xhl.spring;
 import com.xhl.spring.starter.MiniApplication;
 
 public class Application {
