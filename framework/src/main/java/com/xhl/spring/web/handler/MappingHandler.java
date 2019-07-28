@@ -1,6 +1,8 @@
 package com.xhl.spring.web.handler;
 
 
+import com.xhl.spring.beans.BeanFactory;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -26,7 +28,7 @@ public class MappingHandler {
             parameters[i] = request.getParameter(args[i]);
         }
 
-        Object ctl = controller.newInstance();
+        Object ctl = BeanFactory.getBean(controller);
         Object res = method.invoke(ctl, parameters);
         response.getWriter().println(res.toString());
         return true;
